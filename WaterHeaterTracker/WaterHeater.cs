@@ -7,6 +7,7 @@ namespace WaterHeaterTracker
         public int ManufactureYear { get; set;}
         public DateTime Created { get; set;}
         public int Capacity { get; set;}
+        public int Id { get; set;}
     }
 
     public enum Manufacturer{

@@ -38,7 +38,9 @@ namespace WaterHeaterTracker
                 ManufactureYear = Int32.Parse(manufactured.Items[manufactured.SelectedIndex]),
                 Manufacturer = EnumUtil.ParseManufacturer(manufacturer.Items[manufacturer.SelectedIndex])
             };
-            WaterHeater b = heater;
+
+            SyncManager manager = new SyncManager();
+            manager.createHeaterRecord(heater);
 
             await Navigation.PopAsync();
         }
