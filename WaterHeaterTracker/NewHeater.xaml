@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="WaterHeaterTracker.NewHeater"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<ContentPage.Content>
+		<StackLayout>
+			<Label Text="Today"/>
+			<DatePicker x:Name="created"></DatePicker>
+			
+			<Label Text="Year of Manufacture"/>
+			<Picker x:Name="manufactured">
+			</Picker>
+
+			<Label Text="Manufacturer"/>
+			<Picker x:Name="manufacturer">
+			</Picker>
+
+			<Label BindingContext="{x:Reference capacity}" 
+			Text="{Binding Value, StringFormat='Capacity: {0:F0}'}"/>
+			<Slider x:Name="capacity" Maximum="60" Minimum="30"></Slider>
+
+			<Button Text="Save" Clicked="SaveClicked"/>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

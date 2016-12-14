@@ -8,7 +8,7 @@ namespace WaterHeaterTracker
         {
             InitializeComponent();
 
-            MainPage = new WaterHeaterTrackerPage();
+            MainPage = new NavigationPage( new WaterHeaterTrackerPage());
         }
 
         protected override void OnStart()
