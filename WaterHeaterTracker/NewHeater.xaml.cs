@@ -7,7 +7,6 @@ namespace WaterHeaterTracker
 {
     public partial class NewHeater : ContentPage
     {
-        //DateTime manufactureDate { get; set;}
         public NewHeater()
         {
             InitializeComponent();
@@ -36,7 +35,8 @@ namespace WaterHeaterTracker
                 Capacity = (int)capacity.Value,
                 Created = created.Date,
                 ManufactureYear = Int32.Parse(manufactured.Items[manufactured.SelectedIndex]),
-                Manufacturer = EnumUtil.ParseManufacturer(manufacturer.Items[manufacturer.SelectedIndex])
+                Manufacturer = EnumUtil.ParseManufacturerString(manufacturer.Items[manufacturer.SelectedIndex]),
+                HasSoftener = hasSoftener.IsToggled
             };
 
             SyncManager manager = new SyncManager();

@@ -26,6 +26,9 @@
 			Text="{Binding Value, StringFormat='Capacity: {0:F0}'}"/>
 			<Slider x:Name="capacity" Maximum="60" Minimum="30"></Slider>
 
+			<Label Text="Has water softener"/>
+			<Switch x:Name="hasSoftener"/>
+
 			<Button Text="Save" Clicked="SaveClicked"/>
 		</StackLayout>
 	</ContentPage.Content>

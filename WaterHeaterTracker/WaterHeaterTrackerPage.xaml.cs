@@ -15,7 +15,9 @@ namespace WaterHeaterTracker
         }
 
         async void OnEdit(object sender, EventArgs e){
-            await Navigation.PushAsync(new SavedHeaters());
+            var saved = new SavedHeaters();
+            saved.FetchHeaters();
+            await Navigation.PushAsync(saved);
         }
 
         async void OnShowCharts(object sender, EventArgs e){

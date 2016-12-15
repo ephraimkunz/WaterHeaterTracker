@@ -21,7 +21,7 @@ namespace WaterHeaterTracker
         }
 
         public async Task<IList<WaterHeater>> GetAllHeaters(){
-            return await heaterTable.ToListAsync(); 
+            return await heaterTable.ToListAsync();
         }
     }
 }

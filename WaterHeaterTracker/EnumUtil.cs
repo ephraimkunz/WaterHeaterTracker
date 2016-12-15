@@ -8,7 +8,7 @@ namespace WaterHeaterTracker
         {
         }
 
-        public static Manufacturer ParseManufacturer(string name){
+        public static Manufacturer ParseManufacturerString(string name){
             switch(name){
                 case "A.O. Smith":
                     return Manufacturer.AOSmith;
@@ -23,28 +23,27 @@ namespace WaterHeaterTracker
             }
         }
 
+        public static String ParseManufacturerEnum(Manufacturer man){
+            switch (man)
+            {
+                case Manufacturer.AOSmith:
+                    return "A.O. Smith";
+                case Manufacturer.BradfordWhite:
+                    return "Bradford White";
+                case Manufacturer.AmericanStandard:
+                    return "American Standard";
+                default:
+                    return man.ToString();
+            }
+        }
+
         public static IList<String> GetManufacturerNames()
         {
             var names = new List<String>();
-            foreach (string value in Enum.GetNames(typeof(Manufacturer)))
+            foreach (Manufacturer value in Enum.GetValues(typeof(Manufacturer)))
             {
-                string stringValue;
-                switch (value)
-                {
-                    case "AOSmith":
-                        stringValue = "A.O. Smith";
-                        break;
-                    case "BradfordWhite":
-                        stringValue = "Bradford White";
-                        break;
-                    case "AmericanStandard":
-                        stringValue = "American Standard";
-                        break;
-                    default:
-                        stringValue = value;
-                        break;
-                }
-                names.Add(stringValue);
+                
+                names.Add(ParseManufacturerEnum(value));
             }
             names.Sort();
             return names;

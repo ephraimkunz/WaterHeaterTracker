@@ -6,6 +6,6 @@
 	xmlns:local="clr-namespace:WaterHeaterTracker;assembly=WaterHeaterTracker"
 >
 	<ContentPage.Content>
-		<ListView ItemsSource="{x:Static local:SavedHeaters.SavedHeaterItems}" />
+		<ListView x:Name="savedHeaters"/>
 	</ContentPage.Content>
 </ContentPage>
