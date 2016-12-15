@@ -35,7 +35,7 @@ namespace WaterHeaterTracker
             var s3 = new BarSeries { Title = "Bradford White", StrokeColor = OxyColors.Black, StrokeThickness = 1, FillColor = OxyColors.Orange };
             AddSegmentedBucketItems( s3, allHeaters.Where(arg => arg.Manufacturer == Manufacturer.BradfordWhite));
 
-            var s4 = new BarSeries { Title = "GE", StrokeColor = OxyColors.Black, StrokeThickness = 1, FillColor = OxyColors.Black };
+            var s4 = new BarSeries { Title = "GE", StrokeColor = OxyColors.Black, StrokeThickness = 1, FillColor = OxyColors.Blue };
             AddSegmentedBucketItems( s4, allHeaters.Where(arg => arg.Manufacturer == Manufacturer.GE));
 
             var s5 = new BarSeries { Title = "Rheem", StrokeColor = OxyColors.Black, StrokeThickness = 1, FillColor = OxyColors.Red };

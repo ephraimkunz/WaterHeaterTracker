@@ -29,32 +29,32 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="WaterHeaterTrackerPage.xaml" />
-    <EmbeddedResource Include="SavedHeaters.xaml">
+    <EmbeddedResource Include="Pages\SavedHeaters.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewHeater.xaml">
+    <EmbeddedResource Include="Pages\NewHeater.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\WaterHeaterTrackerPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WaterHeaterTrackerPage.xaml.cs">
-      <DependentUpon>WaterHeaterTrackerPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SavedHeaters.xaml.cs">
+    <Compile Include="Models\WaterHeater.cs" />
+    <Compile Include="Pages\SavedHeaters.xaml.cs">
       <DependentUpon>SavedHeaters.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewHeater.xaml.cs">
+    <Compile Include="Pages\NewHeater.xaml.cs">
       <DependentUpon>NewHeater.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WaterHeater.cs" />
-    <Compile Include="EnumUtil.cs" />
-    <Compile Include="SyncManager.cs" />
-    <Compile Include="GraphPage.cs" />
+    <Compile Include="Pages\GraphPage.cs" />
+    <Compile Include="Pages\WaterHeaterTrackerPage.xaml.cs">
+      <DependentUpon>WaterHeaterTrackerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\SyncManager.cs" />
+    <Compile Include="Helpers\EnumUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -99,6 +99,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

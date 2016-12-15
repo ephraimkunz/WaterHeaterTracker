@@ -33,7 +33,6 @@ namespace WaterHeaterTracker
             WaterHeater heater = new WaterHeater
             {
                 Capacity = (int)capacity.Value,
-                Created = created.Date,
                 ManufactureYear = Int32.Parse(manufactured.Items[manufactured.SelectedIndex]),
                 Manufacturer = EnumUtil.ParseManufacturerString(manufacturer.Items[manufacturer.SelectedIndex]),
                 HasSoftener = hasSoftener.IsToggled

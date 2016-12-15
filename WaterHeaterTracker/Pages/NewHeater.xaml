@@ -11,9 +11,6 @@
     </ContentPage.Padding>
 	<ContentPage.Content>
 		<StackLayout>
-			<Label Text="Today"/>
-			<DatePicker x:Name="created"></DatePicker>
-			
 			<Label Text="Year of Manufacture"/>
 			<Picker x:Name="manufactured">
 			</Picker>
@@ -27,7 +24,7 @@
 			<Slider x:Name="capacity" Maximum="60" Minimum="30"></Slider>
 
 			<Label Text="Has water softener"/>
-			<Switch x:Name="hasSoftener"/>
+			<Switch x:Name="hasSoftener" HorizontalOptions="StartAndExpand"/>
 
 			<Button Text="Save" Clicked="SaveClicked"/>
 		</StackLayout>
