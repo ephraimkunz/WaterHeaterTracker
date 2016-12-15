@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using OxyPlot.Xamarin.Android
 
 namespace WaterHeaterTracker.Droid
 {
@@ -22,6 +23,7 @@ namespace WaterHeaterTracker.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
 
             LoadApplication(new App());
         }

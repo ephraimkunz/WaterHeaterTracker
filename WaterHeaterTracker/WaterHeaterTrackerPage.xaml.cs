@@ -21,7 +21,8 @@ namespace WaterHeaterTracker
         }
 
         async void OnShowCharts(object sender, EventArgs e){
-            
+            var graphs = new GraphPage();
+            await Navigation.PushAsync(graphs);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using OxyPlot.Xamarin.Forms.Platform.iOS;
 
 using Foundation;
 using UIKit;
@@ -14,6 +15,7 @@ namespace WaterHeaterTracker.iOS
         {
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             global::Xamarin.Forms.Forms.Init();
+            OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
 
             LoadApplication(new App());
 
