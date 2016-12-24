@@ -10,23 +10,30 @@
                     WinPhone="20, 20, 20, 20" />
     </ContentPage.Padding>
 	<ContentPage.Content>
-		<StackLayout>
-			<Label Text="Year of Manufacture"/>
-			<Picker x:Name="manufactured">
-			</Picker>
+		<ScrollView Orientation="Vertical">
+			<StackLayout>
 
-			<Label Text="Manufacturer"/>
-			<Picker x:Name="manufacturer">
-			</Picker>
+				<Label Text="Manufacturer"/>
+				<Picker x:Name="manufacturer" SelectedIndexChanged="ManufacturerIndexChanged">
+				</Picker>
 
-			<Label BindingContext="{x:Reference capacity}" 
-			Text="{Binding Value, StringFormat='Capacity: {0:F0}'}"/>
-			<Slider x:Name="capacity" Maximum="60" Minimum="30"></Slider>
+				<Entry Placeholder="Serial number" x:Name="serialNumber" TextChanged="SerialCompleted"/>
+				
+				<Label Text="Year of Manufacture"/>
+				<Picker x:Name="manufactured">
+				</Picker>
 
-			<Label Text="Has water softener"/>
-			<Switch x:Name="hasSoftener" HorizontalOptions="StartAndExpand"/>
+				<Label BindingContext="{x:Reference capacity}" 
+				Text="{Binding Value, StringFormat='Capacity: {0:F0}'}"/>
+				<Slider x:Name="capacity" Maximum="60" Minimum="30"></Slider>
 
-			<Button Text="Save" Clicked="SaveClicked"/>
-		</StackLayout>
+				<Label Text="Has water softener"/>
+				<Switch x:Name="hasSoftener" HorizontalOptions="StartAndExpand"/>
+
+				<Button Text="Save" Clicked="SaveClicked"/>
+
+				<Label Text="P=2017, N=2016, M=2015" x:Name="serialYearKey"/>
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
