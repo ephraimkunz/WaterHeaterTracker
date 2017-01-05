@@ -54,7 +54,10 @@ namespace WaterHeaterTracker
             };
 
             SyncManager manager = new SyncManager();
-            manager.createHeaterRecord(heater);
+            bool success = manager.createHeaterRecord(heater);
+            if(!success){
+                await DisplayAlert("Network Error", "No network available, so heater was not created. Try again later.", "Ok");
+            }
 
             await Navigation.PopAsync();
         }

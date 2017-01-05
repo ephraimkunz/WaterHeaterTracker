@@ -2,6 +2,9 @@
 using Microsoft.WindowsAzure.MobileServices;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using XLabs.Ioc;
+using XLabs.Platform.Device;
+using XLabs.Platform.Services;
 
 namespace WaterHeaterTracker
 {
@@ -17,9 +20,23 @@ namespace WaterHeaterTracker
 
         }
 
-        public void createHeaterRecord(WaterHeater heater)
+        /// <summary>
+        /// Creates the heater record.
+        /// </summary>
+        /// <returns><c>true</c>, if heater record was created, <c>false</c> otherwise.</returns>
+        /// <param name="heater">Heater.</param>
+        public bool createHeaterRecord(WaterHeater heater)
         {
+            var device = Resolver.Resolve<IDevice>();
+            NetworkStatus networkStatus = device.Network.InternetConnectionStatus();
+
+            if (networkStatus == NetworkStatus.NotReachable)
+            {
+                return false;
+            }
+
             heaterTable.InsertAsync(heater);
+            return true;
         }
 
         public async Task<IList<WaterHeater>> GetAllHeaters(){
