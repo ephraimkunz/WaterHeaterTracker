@@ -10,6 +10,7 @@ using Android.OS;
 using OxyPlot.Xamarin.Android;
 using XLabs.Ioc;
 using XLabs.Platform.Device;
+using Xamarin;
 
 namespace WaterHeaterTracker.Droid
 {
@@ -17,6 +18,7 @@ namespace WaterHeaterTracker.Droid
     public class MainActivity : XFormsAppCompatDroid    {
         protected override void OnCreate(Bundle bundle)
         {
+            Insights.Initialize("Your API key", this);
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
